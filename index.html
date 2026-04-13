@@ -5,22 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Monish Pahwa — Procurement × AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #1a1a24;
-    --accent: #00ff87;
-    --accent2: #00cc6a;
-    --text: #e8e8f0;
-    --muted: #6b6b80;
-    --border: #1f1f2e;
-    --card: #13131c;
+    --bg: #080c14;
+    --bg2: #0d1420;
+    --bg3: #111a2e;
+    --accent: #4f8ef7;
+    --accent2: #3a7be8;
+    --accent-glow: rgba(79,142,247,0.15);
+    --gold: #c9a84c;
+    --text: #e2e8f4;
+    --muted: #5a6a8a;
+    --muted2: #8a9bb8;
+    --border: #1a2540;
+    --card: #0d1420;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -40,18 +42,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 4rem;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(12px);
+    padding: 1.2rem 5rem;
+    background: rgba(8,12,20,0.92);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
 
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.2rem;
     color: var(--text);
+    letter-spacing: 0.02em;
   }
 
   .nav-logo span { color: var(--accent); }
@@ -63,135 +65,47 @@
   }
 
   .nav-links a {
-    color: var(--muted);
+    color: var(--muted2);
     text-decoration: none;
     font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
 
   .nav-links a:hover { color: var(--accent); }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 4rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -30%;
-    right: -20%;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(0,255,135,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(0,255,135,0.03) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-
-  .hero-tag::before {
-    content: '';
-    display: inline-block;
-    width: 2rem;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.95;
-    letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
-    color: var(--text);
-  }
-
-  .hero h1 .accent { color: var(--accent); }
-
-  .hero h1 .dim { color: var(--muted); }
-
-  .hero-sub {
-    font-size: 1.15rem;
-    color: var(--muted);
-    max-width: 540px;
-    margin-bottom: 3rem;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-
-  .hero-sub strong { color: var(--text); font-weight: 500; }
-
-  .hero-ctas {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    border-radius: 4px;
+    padding: 0.75rem 1.8rem;
+    border-radius: 3px;
     font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.25s;
     cursor: pointer;
     border: none;
   }
 
   .btn-primary {
     background: var(--accent);
-    color: #000;
+    color: #fff;
     font-weight: 500;
   }
 
   .btn-primary:hover {
     background: var(--accent2);
     transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(79,142,247,0.3);
   }
 
   .btn-ghost {
     background: transparent;
-    color: var(--text);
+    color: var(--muted2);
     border: 1px solid var(--border);
   }
 
@@ -200,56 +114,175 @@
     color: var(--accent);
   }
 
-  .hero-stats {
+  /* HERO */
+  .hero {
+    min-height: 100vh;
     display: flex;
-    gap: 3rem;
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--border);
+    align-items: center;
+    padding: 8rem 5rem 5rem;
+    position: relative;
+    overflow: hidden;
   }
 
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1;
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(79,142,247,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    pointer-events: none;
   }
 
-  .stat-label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 0.3rem;
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.3;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
   }
 
-  /* SECTIONS */
-  section {
-    padding: 6rem 4rem;
+  .hero-inner {
     max-width: 1100px;
     margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
-  .section-tag {
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
     color: var(--accent);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-bottom: 0.8rem;
+    margin-bottom: 2rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(79,142,247,0.25);
+    border-radius: 2px;
+    background: rgba(79,142,247,0.05);
   }
 
-  .section-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 3rem;
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
     color: var(--text);
   }
 
-  .section-divider {
+  .hero h1 .accent { color: var(--accent); }
+
+  .hero-title-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--muted2);
+    letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .hero-title-sub span {
+    color: var(--gold);
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+    color: var(--muted2);
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .hero-desc strong {
+    color: var(--text);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 700px;
+    background: var(--card);
+  }
+
+  .stat {
+    padding: 1.5rem;
+    border-right: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .stat:last-child { border-right: none; }
+  .stat:hover { background: var(--bg3); }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+
+  /* SECTION STYLES */
+  .section-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 5rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .divider {
     width: 100%;
     height: 1px;
     background: var(--border);
@@ -260,276 +293,315 @@
   /* ABOUT */
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 3fr 2fr;
+    gap: 5rem;
     align-items: start;
   }
 
   .about-text p {
-    color: var(--muted);
+    color: var(--muted2);
     margin-bottom: 1.2rem;
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
   .about-text p strong { color: var(--text); }
 
-  .about-skills {
+  .about-meta {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 2rem;
   }
 
-  .skill-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .skill-name {
+  .meta-block h4 {
     font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text);
-    width: 160px;
-    flex-shrink: 0;
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
   }
 
-  .skill-bar {
-    flex: 1;
-    height: 2px;
-    background: var(--border);
+  .meta-block p {
+    color: var(--muted2);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .etag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
     border-radius: 2px;
-    overflow: hidden;
-  }
-
-  .skill-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 2px;
-    transform-origin: left;
-    animation: fillBar 1.5s ease forwards;
-    transform: scaleX(0);
-  }
-
-  @keyframes fillBar {
-    to { transform: scaleX(1); }
+    color: var(--muted2);
+    background: var(--card);
   }
 
   /* EXPERIENCE */
-  .exp-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
   .exp-item {
     display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 2rem;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
     padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
-    position: relative;
   }
 
   .exp-item:first-child { border-top: 1px solid var(--border); }
 
+  .exp-left {}
+
   .exp-date {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--muted);
-    padding-top: 0.2rem;
     letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(79,142,247,0.3);
+    border-radius: 2px;
+    display: inline-block;
+    background: rgba(79,142,247,0.05);
   }
 
   .exp-role {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.15rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text);
     margin-bottom: 0.3rem;
+    line-height: 1.3;
   }
 
   .exp-company {
     font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent);
-    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
     letter-spacing: 0.05em;
   }
 
-  .exp-desc {
-    color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.7;
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .exp-bullets li {
+    color: var(--muted2);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.7rem;
   }
 
   .exp-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
     margin-top: 1rem;
   }
 
   .tag {
     font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    padding: 0.25rem 0.7rem;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
     border: 1px solid var(--border);
     border-radius: 2px;
     color: var(--muted);
-    letter-spacing: 0.05em;
   }
 
   /* PROJECTS */
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
   }
 
   .project-card {
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
     padding: 2rem;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: background 0.2s;
     position: relative;
-    overflow: hidden;
   }
 
-  .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--accent);
-    transition: height 0.3s;
-  }
+  .project-card:hover { background: var(--bg3); }
 
-  .project-card:hover {
-    border-color: rgba(0,255,135,0.2);
-    transform: translateY(-2px);
-  }
-
-  .project-card:hover::before { height: 100%; }
-
-  .project-icon {
-    font-size: 1.5rem;
+  .project-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
     margin-bottom: 1rem;
   }
 
   .project-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
   }
 
   .project-desc {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
+    color: var(--muted2);
+    font-size: 0.85rem;
+    line-height: 1.65;
     margin-bottom: 1.2rem;
   }
 
-  .project-meta {
+  .project-stack {
     font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--accent);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
+  }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.8rem;
+    transition: border-color 0.2s;
+  }
+
+  .edu-card:hover { border-color: rgba(79,142,247,0.3); }
+
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .edu-inst {
+    font-size: 0.82rem;
+    color: var(--muted2);
   }
 
   /* CONTACT */
   .contact-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
   }
 
   .contact-text h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    color: var(--text);
   }
 
-  .contact-text h2 .accent { color: var(--accent); }
+  .contact-text h2 em {
+    color: var(--accent);
+    font-style: italic;
+  }
 
   .contact-text p {
-    color: var(--muted);
+    color: var(--muted2);
     margin-bottom: 2rem;
     line-height: 1.7;
+    font-size: 0.95rem;
   }
 
   .contact-links {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .contact-link {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.2rem 1.5rem;
+    gap: 1.2rem;
+    padding: 1.1rem 1.5rem;
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 4px;
     text-decoration: none;
-    color: var(--text);
+    color: var(--muted2);
     transition: all 0.2s;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
   }
 
   .contact-link:hover {
     border-color: var(--accent);
     color: var(--accent);
+    background: var(--bg3);
   }
 
-  .contact-link-icon {
-    font-size: 1.2rem;
-    width: 2rem;
-    text-align: center;
-  }
-
-  .contact-link-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
+  .contact-link-icon { font-size: 1rem; }
 
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
-    padding: 2rem 4rem;
+    padding: 2rem 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--muted);
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    color: var(--muted);
   }
 
-  /* NOISE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.025;
-    pointer-events: none;
-    z-index: 999;
-  }
+  footer span.hi { color: var(--accent); }
 
-  /* SCROLL ANIMATION */
+  /* REVEAL */
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
   .reveal.visible {
@@ -537,15 +609,16 @@
     transform: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
+    .section-wrap { padding: 4rem 1.5rem; }
     .hero { padding: 6rem 1.5rem 3rem; }
-    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .projects-grid { grid-template-columns: 1fr; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.8rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .edu-grid { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
   }
 </style>
@@ -554,134 +627,131 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">MP<span>.</span></div>
+  <div class="nav-logo">Monish <span>Pahwa</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="btn btn-primary" style="padding:0.6rem 1.4rem;font-size:0.75rem;">Get in touch</a>
+  <a href="#contact" class="btn btn-primary">Get in touch</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-tag">Zürich, Switzerland · Available for senior roles</div>
-    <h1>
-      Monish<br>
-      <span class="accent">Pahwa</span><br>
-    </h1>
-    <p style="font-family:'DM Mono',monospace;font-size:1rem;color:var(--muted);margin-bottom:1rem;letter-spacing:0.05em;">Procurement × AI</p>
-    <p class="hero-sub">
-      I don't just buy software — <strong>I build the tools that make procurement smarter.</strong>
-      15 years of IT & Professional Services procurement, now supercharged with Data Science & AI.
+    <div class="hero-eyebrow">📍 Zürich, Switzerland &nbsp;·&nbsp; Open to Senior Roles</div>
+    <h1>Monish<br><span class="accent">Pahwa</span></h1>
+    <div class="hero-title-sub">ICT Procurement Manager &nbsp;<span>×</span>&nbsp; AI & Data Science</div>
+    <p class="hero-desc">
+      Procurement and ICT professional with <strong>15 years of experience</strong> in global sourcing. I bridge the gap between strategic procurement and applied AI — building tools that make procurement smarter, faster, and more defensible.
     </p>
     <div class="hero-ctas">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#experience" class="btn btn-primary">View My Experience</a>
       <a href="https://linkedin.com/in/monishpahwa" target="_blank" class="btn btn-ghost">LinkedIn →</a>
     </div>
     <div class="hero-stats">
-      <div>
+      <div class="stat">
         <div class="stat-num">15+</div>
-        <div class="stat-label">Years in IT Procurement</div>
+        <div class="stat-label">Years in ICT Procurement</div>
       </div>
-      <div>
+      <div class="stat">
+        <div class="stat-num">15%</div>
+        <div class="stat-label">Cost reduction delivered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">20%</div>
+        <div class="stat-label">Cycle time improvement</div>
+      </div>
+      <div class="stat">
         <div class="stat-num">6+</div>
         <div class="stat-label">AI tools built & deployed</div>
-      </div>
-      <div>
-        <div class="stat-num">2</div>
-        <div class="stat-label">Major mergers navigated</div>
-      </div>
-      <div>
-        <div class="stat-num">CHF</div>
-        <div class="stat-label">Swiss market expertise</div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="section-tag">// 01 — About</div>
-  <div class="section-title">Procurement leader.<br>AI builder.</div>
+<div class="section-wrap" id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01 —</span>
+    <h2 class="section-title">Profile</h2>
+  </div>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
-        I sit at the intersection of <strong>strategic IT procurement</strong> and <strong>applied AI</strong> — a combination that didn't exist as a job title when I started building it.
+        I am an ICT Procurement professional with <strong>15 years of experience</strong> in global sourcing, supplier contract negotiation, and cross-functional coordination with IT and finance teams. My expertise spans ICT procurement strategy, category management, and digital procurement tooling.
       </p>
       <p>
-        At Helvetia-Baloise, I led the post-merger IT procurement integration — not with spreadsheets, but with <strong>self-built NLP pipelines, RAG contract analyzers, and spend analytics platforms</strong> deployed in production.
+        What sets me apart is my ability to combine <strong>deep procurement expertise with applied AI and data science</strong>. I have built and deployed production-grade procurement analytics tools — including spend analysis platforms, contract intelligence pipelines, and supplier risk monitors — used by procurement teams in regulated environments.
       </p>
       <p>
-        I'm currently completing a <strong>Bachelor's in Data Science & AI at FHNW</strong>, where my Praxisprojekt is the very platform I built for Helvetia's procurement department.
-      </p>
-      <p>
-        If you're looking for a procurement leader who can sit in a boardroom <em>and</em> write a Python script the same afternoon — let's talk.
+        I am currently completing a <strong>Bachelor's degree in Data Science & AI at FHNW</strong>, where my applied project directly addresses post-merger procurement challenges in the Swiss insurance sector.
       </p>
     </div>
-    <div class="about-skills reveal">
-      <div class="skill-row">
-        <span class="skill-name">Strategic Sourcing</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+    <div class="about-meta reveal">
+      <div class="meta-block">
+        <h4>Areas of Expertise</h4>
+        <div class="expertise-tags">
+          <span class="etag">ICT Procurement</span>
+          <span class="etag">Global Sourcing</span>
+          <span class="etag">Category Management</span>
+          <span class="etag">Stakeholder Management</span>
+          <span class="etag">Supplier Negotiation</span>
+          <span class="etag">Contract Management</span>
+          <span class="etag">Spend Analytics</span>
+          <span class="etag">AI & Data Science</span>
+          <span class="etag">Digital Procurement</span>
+          <span class="etag">Post-Merger Integration</span>
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-name">IT Procurement</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+      <div class="meta-block">
+        <h4>Languages</h4>
+        <p>English · French · German</p>
       </div>
-      <div class="skill-row">
-        <span class="skill-name">NLP & AI</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">R / Shiny</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Data Science</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Contract Intelligence</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Vendor Management</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">Spend Analytics</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+      <div class="meta-block">
+        <h4>Location</h4>
+        <p>Switzerland · German national with EU C permit</p>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-tag">// 02 — Experience</div>
-  <div class="section-title">15 years.<br>Always building.</div>
+<div class="section-wrap" id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">02 —</span>
+    <h2 class="section-title">Experience</h2>
+  </div>
   <div class="exp-list">
 
     <div class="exp-item reveal">
-      <div class="exp-date">2023 — Present</div>
+      <div class="exp-left">
+        <div class="exp-date">Jan 2024 — Present</div>
+        <div class="exp-type">Current Role</div>
+      </div>
       <div>
-        <div class="exp-role">IT Procurement Specialist</div>
-        <div class="exp-company">HELVETIA-BALOISE · Zürich, Switzerland</div>
-        <div class="exp-desc">
-          Leading IT procurement through a major post-merger integration in the Swiss insurance sector. Built and deployed a suite of AI-powered procurement tools — including spend analytics platforms, NLP contract analyzers, and supplier consolidation dashboards — adopted across the procurement function.
-        </div>
+        <div class="exp-role">ICT Procurement Strategy Manager</div>
+        <div class="exp-company">HELVETIA INSURANCE GROUP · Basel Metropolitan Area</div>
+        <ul class="exp-bullets">
+          <li>Developed and implemented ICT procurement strategies, achieving a 15% cost reduction across key categories.</li>
+          <li>Negotiated supplier contracts to secure favourable terms and enhanced service levels.</li>
+          <li>Coordinated with IT and finance teams to align procurement strategies with organisational needs.</li>
+          <li>Analysed market trends to inform procurement decisions and contribute to strategic planning.</li>
+          <li>Built and deployed AI-powered procurement analytics tools adopted across the procurement function.</li>
+        </ul>
         <div class="exp-tags">
+          <span class="tag">ICT Procurement</span>
           <span class="tag">Post-Merger Integration</span>
-          <span class="tag">SaaS Procurement</span>
           <span class="tag">AI Tooling</span>
-          <span class="tag">Supplier Consolidation</span>
-          <span class="tag">Contract Intelligence</span>
+          <span class="tag">Supplier Strategy</span>
           <span class="tag">FINMA</span>
           <span class="tag">nDSG/GDPR</span>
         </div>
@@ -689,182 +759,193 @@
     </div>
 
     <div class="exp-item reveal">
-      <div class="exp-date">2021 — 2023</div>
+      <div class="exp-left">
+        <div class="exp-date">Jan 2023 — Dec 2023</div>
+        <div class="exp-type">Category Management</div>
+      </div>
       <div>
-        <div class="exp-role">Senior IT Buyer</div>
-        <div class="exp-company">HELVETIA VERSICHERUNGEN · Basel, Switzerland</div>
-        <div class="exp-desc">
-          Strategic sourcing for IT categories including Cloud, SaaS, Telco, and Professional Services. Led major vendor negotiations with Tier-1 Swiss and international suppliers. Established framework agreements and RFP processes for the IT department.
-        </div>
+        <div class="exp-role">Procurement Category Manager</div>
+        <div class="exp-company">EAO · Switzerland</div>
+        <ul class="exp-bullets">
+          <li>Led supplier negotiations, achieving a 10% cost reduction in key categories through strategic contract terms.</li>
+          <li>Streamlined procurement processes, reducing lead time by 15% and enhancing operational efficiency.</li>
+          <li>Developed category strategies that improved supply chain performance and aligned with business objectives.</li>
+          <li>Conducted market analysis to identify trends, informing purchasing decisions and optimising sourcing outcomes.</li>
+        </ul>
         <div class="exp-tags">
-          <span class="tag">Cloud Procurement</span>
-          <span class="tag">Telco</span>
-          <span class="tag">Professional Services</span>
-          <span class="tag">Contract Negotiation</span>
+          <span class="tag">Category Strategy</span>
+          <span class="tag">Supplier Negotiation</span>
+          <span class="tag">Market Analysis</span>
+          <span class="tag">Process Improvement</span>
         </div>
       </div>
     </div>
 
     <div class="exp-item reveal">
-      <div class="exp-date">2010 — 2021</div>
-      <div>
-        <div class="exp-role">IT Procurement — Various Senior Roles</div>
-        <div class="exp-company">INSURANCE & FINANCIAL SERVICES · Switzerland</div>
-        <div class="exp-desc">
-          Over a decade of progressive IT procurement roles in the Swiss regulated sector. Built deep expertise across hardware, software licensing, managed services, cybersecurity, and outsourcing categories. Developed a strong foundation in vendor cost structures, TCO analysis, and strategic sourcing methodology.
-        </div>
-        <div class="exp-tags">
-          <span class="tag">Hardware</span>
-          <span class="tag">Software Licensing</span>
-          <span class="tag">Managed Services</span>
-          <span class="tag">TCO Analysis</span>
-          <span class="tag">Cybersecurity</span>
-        </div>
+      <div class="exp-left">
+        <div class="exp-date">Jan 2018 — Jan 2022</div>
+        <div class="exp-type">Global Role</div>
       </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-date">2025 — 2026</div>
       <div>
-        <div class="exp-role">Bachelor's Student — Data Science & AI</div>
-        <div class="exp-company">FHNW · Fachhochschule Nordwestschweiz</div>
-        <div class="exp-desc">
-          Praxisprojekt: Built and deployed a post-merger spend analysis platform for an IT Procurement department in the Swiss insurance sector — combining NLP, supplier matching algorithms, clustering, and a RAG contract intelligence pipeline. Presented to senior procurement stakeholders.
-        </div>
+        <div class="exp-role">Global Procurement Manager — Indirects</div>
+        <div class="exp-company">CERDIA (A Blackstone Company) · Basel, Switzerland</div>
+        <ul class="exp-bullets">
+          <li>Managed global procurement for indirect categories, focusing on strategic sourcing and supplier relationship management.</li>
+          <li>Achieved a 15% reduction in costs through strategic sourcing projects across key categories.</li>
+          <li>Implemented process improvements that reduced procurement cycle time by 20%.</li>
+          <li>Negotiated favourable contract terms fostering long-term supplier partnerships.</li>
+          <li>Coordinated with cross-functional and cross-border teams to maintain supply chain continuity during market disruptions.</li>
+        </ul>
         <div class="exp-tags">
-          <span class="tag">Data Science</span>
-          <span class="tag">NLP</span>
-          <span class="tag">RAG</span>
-          <span class="tag">R / Shiny</span>
-          <span class="tag">DuckDB</span>
+          <span class="tag">Global Sourcing</span>
+          <span class="tag">Indirect Procurement</span>
+          <span class="tag">Supplier Relations</span>
+          <span class="tag">Cross-border Teams</span>
+          <span class="tag">Cost Reduction</span>
         </div>
       </div>
     </div>
 
   </div>
-</section>
+</div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
 
 <!-- PROJECTS -->
-<section id="projects">
-  <div class="section-tag">// 03 — Projects</div>
-  <div class="section-title">Built in production.<br>Not in PowerPoint.</div>
+<div class="section-wrap" id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03 —</span>
+    <h2 class="section-title">AI Projects</h2>
+  </div>
   <div class="projects-grid">
 
     <div class="project-card reveal">
-      <div class="project-icon">📊</div>
+      <div class="project-num">01</div>
       <div class="project-title">Spend Analysis Platform</div>
-      <div class="project-desc">
-        End-to-end M&A supplier consolidation tool processing large-scale invoice data. Fuzzy matching, clustering, and deduplication algorithms with Excel export. Deployed on cloud infrastructure with Docker and nginx.
-      </div>
-      <div class="project-meta">R · Shiny · DuckDB · Docker · Cloud</div>
+      <div class="project-desc">End-to-end M&A supplier consolidation tool processing large-scale invoice data. Fuzzy matching, clustering, and deduplication algorithms. Deployed on cloud infrastructure in a regulated insurance environment.</div>
+      <div class="project-stack">R · Shiny · DuckDB · Docker · Cloud</div>
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">🧠</div>
-      <div class="project-title">Contract Intelligence RAG Pipeline</div>
-      <div class="project-desc">
-        Local-first RAG pipeline for large-scale contract analysis. Vector embeddings with hybrid semantic search and a conversational Q&A interface. Zero data leaves the corporate perimeter — built for regulated environments.
-      </div>
-      <div class="project-meta">DuckDB · Ollama · Vector Search · BM25</div>
+      <div class="project-num">02</div>
+      <div class="project-title">Contract Intelligence Pipeline</div>
+      <div class="project-desc">Local-first RAG pipeline for large-scale contract analysis. Vector embeddings with hybrid semantic search and conversational Q&A. Zero data leaves the corporate perimeter — built for regulated environments.</div>
+      <div class="project-stack">DuckDB · Ollama · Vector Search · BM25</div>
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">🔍</div>
+      <div class="project-num">03</div>
       <div class="project-title">Category Intelligence App</div>
-      <div class="project-desc">
-        Supplier matching and deduplication across multi-entity invoice datasets. Built for nDSG/GDPR compliance with session-based data handling. Fully Dockerized and deployed in a regulated insurance environment.
-      </div>
-      <div class="project-meta">R · Shiny · TF-IDF · Docker · nDSG</div>
+      <div class="project-desc">Supplier matching and deduplication across multi-entity invoice datasets. Built for nDSG/GDPR compliance with session-based data handling. Fully Dockerized and deployed in production.</div>
+      <div class="project-stack">R · Shiny · TF-IDF · Docker · nDSG</div>
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">📄</div>
+      <div class="project-num">04</div>
       <div class="project-title">Contract Risk Analyzer</div>
-      <div class="project-desc">
-        OCR pipeline with automated clause extraction across multiple risk categories. Change-of-control detection, severity classification, and structured Word report generation. Local LLM for privacy-preserving analysis.
-      </div>
-      <div class="project-meta">R · OCR · Ollama · Local LLM</div>
+      <div class="project-desc">OCR pipeline with automated clause extraction across multiple risk categories. Change-of-control detection, severity classification, and structured report generation using a local LLM for privacy-preserving analysis.</div>
+      <div class="project-stack">R · OCR · Local LLM · Structured Output</div>
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">📰</div>
+      <div class="project-num">05</div>
       <div class="project-title">Supplier News Monitor</div>
-      <div class="project-desc">
-        Real-time supplier risk monitoring combining web search APIs and local LLM summarization. Delivers automated briefings on supplier developments relevant to active contracts and categories.
-      </div>
-      <div class="project-meta">R · Shiny · Web Search API · Ollama</div>
+      <div class="project-desc">Real-time supplier risk monitoring combining web search APIs and local LLM summarization. Delivers automated briefings on supplier developments relevant to active contracts and categories.</div>
+      <div class="project-stack">R · Shiny · Web Search API · Ollama</div>
     </div>
 
     <div class="project-card reveal">
-      <div class="project-icon">📝</div>
+      <div class="project-num">06</div>
       <div class="project-title">Negotiation Brief Generator</div>
-      <div class="project-desc">
-        Automated negotiation preparation tool generating structured briefing documents from contract data and spend analytics. Reduces manual preparation time significantly for strategic sourcing events.
-      </div>
-      <div class="project-meta">R · LLM · DuckDB · Word Output</div>
+      <div class="project-desc">Automated negotiation preparation tool generating structured briefing documents from contract and spend data. Significantly reduces manual preparation time for strategic sourcing events.</div>
+      <div class="project-stack">R · LLM · DuckDB · Word Output</div>
     </div>
 
   </div>
-</section>
+</div>
 
-<div class="section-divider"></div>
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<div class="section-wrap" id="education">
+  <div class="section-header reveal">
+    <span class="section-num">04 —</span>
+    <h2 class="section-title">Education & Certifications</h2>
+  </div>
+  <div class="edu-grid">
+
+    <div class="edu-card reveal">
+      <div class="edu-year">2024 — 2028</div>
+      <div class="edu-title">BSc Data Science & Artificial Intelligence</div>
+      <div class="edu-inst">FHNW — University of Applied Sciences Northwestern Switzerland</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">Present</div>
+      <div class="edu-title">MBA — Krannert School of Management</div>
+      <div class="edu-inst">Purdue University</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">2021 — 2022</div>
+      <div class="edu-title">Certificate in Leading Innovation in Digital Procurement</div>
+      <div class="edu-inst">IMD Business School</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">2022</div>
+      <div class="edu-title">Management of Biotech, Medtech & Pharma Ventures</div>
+      <div class="edu-inst">EPFL — École Polytechnique Fédérale de Lausanne</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">2022 — 2023</div>
+      <div class="edu-title">Data Science, ML, Power BI, SQL & AI Certifications</div>
+      <div class="edu-inst">DataCamp — 15+ certificates</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
 
 <!-- CONTACT -->
-<section id="contact">
+<div class="section-wrap" id="contact">
   <div class="contact-inner">
     <div class="contact-text reveal">
-      <div class="section-tag">// 04 — Contact</div>
-      <h2>Let's build<br>something <span class="accent">smarter.</span></h2>
-      <p>Open to senior IT procurement, procurement analytics, and digital transformation roles in Switzerland.</p>
-      <a href="mailto:monish@monishpahwa.com" class="btn btn-primary">Send a message</a>
+      <div style="font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--accent);letter-spacing:0.15em;margin-bottom:0.8rem;">05 — CONTACT</div>
+      <h2>Let's build something <em>smarter.</em></h2>
+      <p>Open to senior ICT procurement, procurement analytics, and digital transformation roles in Switzerland. Available for discussions.</p>
+      <a href="mailto:monishpahwa77@googlemail.com" class="btn btn-primary">Send a message</a>
     </div>
     <div class="contact-links reveal">
       <a href="https://linkedin.com/in/monishpahwa" target="_blank" class="contact-link">
         <span class="contact-link-icon">💼</span>
-        <span class="contact-link-label">linkedin.com/in/monishpahwa</span>
+        linkedin.com/in/monishpahwa
       </a>
-      <a href="mailto:monish@monishpahwa.com" class="contact-link">
+      <a href="mailto:monishpahwa77@googlemail.com" class="contact-link">
         <span class="contact-link-icon">✉️</span>
-        <span class="contact-link-label">monish@monishpahwa.com</span>
-      </a>
-      <a href="https://github.com/monishpahwa" target="_blank" class="contact-link">
-        <span class="contact-link-icon">⌨️</span>
-        <span class="contact-link-label">github.com/monishpahwa</span>
+        monishpahwa77@googlemail.com
       </a>
     </div>
   </div>
-</section>
+</div>
 
 <footer>
   <span>© 2026 Monish Pahwa</span>
-  <span style="color:var(--accent)">Procurement × AI</span>
+  <span class="hi">Procurement × AI</span>
   <span>Zürich, Switzerland</span>
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
       }
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
-
-  // Skill bar animation on scroll
-  const skillFills = document.querySelectorAll('.skill-fill');
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.animation = 'fillBar 1.2s ease forwards';
-      }
-    });
-  }, { threshold: 0.3 });
-  skillFills.forEach(s => skillObserver.observe(s));
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
 </script>
 </body>
 </html>
