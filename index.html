@@ -8,18 +8,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #080c14;
-    --bg2: #0d1420;
-    --bg3: #111a2e;
-    --accent: #4f8ef7;
-    --accent2: #3a7be8;
-    --accent-glow: rgba(79,142,247,0.15);
-    --gold: #c9a84c;
-    --text: #e2e8f4;
-    --muted: #5a6a8a;
-    --muted2: #8a9bb8;
-    --border: #1a2540;
-    --card: #0d1420;
+    --bg: #f0f2f5;
+    --bg2: #e8eaed;
+    --bg3: #e2e5e9;
+    --accent: #1a56db;
+    --accent2: #1344b8;
+    --accent-glow: rgba(26,86,219,0.1);
+    --gold: #b45309;
+    --text: #111827;
+    --muted: #6b7280;
+    --muted2: #374151;
+    --border: #d1d5db;
+    --card: #ffffff;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,7 +43,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 5rem;
-    background: rgba(8,12,20,0.92);
+    background: rgba(240,242,245,0.95);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
@@ -100,7 +100,7 @@
   .btn-primary:hover {
     background: var(--accent2);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(79,142,247,0.3);
+    box-shadow: 0 8px 24px rgba(26,86,219,0.2);
   }
 
   .btn-ghost {
@@ -128,8 +128,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(79,142,247,0.06) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(201,168,76,0.03) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(26,86,219,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 70%, rgba(180,83,9,0.03) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -139,7 +139,7 @@
     background-image: linear-gradient(var(--border) 1px, transparent 1px),
       linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 60px 60px;
-    opacity: 0.3;
+    opacity: 0.15;
     pointer-events: none;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
   }
@@ -163,9 +163,9 @@
     text-transform: uppercase;
     margin-bottom: 2rem;
     padding: 0.4rem 1rem;
-    border: 1px solid rgba(79,142,247,0.25);
+    border: 1px solid rgba(26,86,219,0.2);
     border-radius: 2px;
-    background: rgba(79,142,247,0.05);
+    background: rgba(26,86,219,0.04);
   }
 
   .hero h1 {
@@ -372,10 +372,10 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.2rem 0.6rem;
-    border: 1px solid rgba(79,142,247,0.3);
+    border: 1px solid rgba(26,86,219,0.2);
     border-radius: 2px;
     display: inline-block;
-    background: rgba(79,142,247,0.05);
+    background: rgba(26,86,219,0.04);
   }
 
   .exp-role {
@@ -500,7 +500,7 @@
     transition: border-color 0.2s;
   }
 
-  .edu-card:hover { border-color: rgba(79,142,247,0.3); }
+  .edu-card:hover { border-color: rgba(26,86,219,0.2); }
 
   .edu-year {
     font-family: 'DM Mono', monospace;
@@ -643,7 +643,7 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">📍 Basel, Switzerland &nbsp;·&nbsp; Open to Senior Roles</div>
+    <div class="hero-eyebrow">📍 Zürich, Switzerland &nbsp;·&nbsp; Open to Senior Roles</div>
     <h1>Monish<br><span class="accent">Pahwa</span></h1>
     <div class="hero-title-sub">ICT Procurement Manager &nbsp;<span>×</span>&nbsp; AI & Data Science</div>
     <p class="hero-desc">
@@ -934,7 +934,7 @@
 <footer>
   <span>© 2026 Monish Pahwa</span>
   <span class="hi">Procurement × AI</span>
-  <span>Basel, Switzerland</span>
+  <span>Zürich, Switzerland</span>
 </footer>
 
 <script>
