@@ -312,6 +312,93 @@
     margin: 0 auto;
   }
 
+  /* SKILLS */
+  .skills-section {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 5rem;
+  }
+
+  .skills-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .skills-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .skills-tagline strong {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .skills-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .skill-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .skill-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .skill-pill.procurement {
+    background: rgba(26,86,219,0.06);
+    border: 1px solid rgba(26,86,219,0.2);
+    color: var(--accent);
+  }
+
+  .skill-pill.ai {
+    background: rgba(180,83,9,0.06);
+    border: 1px solid rgba(180,83,9,0.2);
+    color: var(--gold);
+  }
+
+  .skill-pill.cloud {
+    background: rgba(5,150,105,0.06);
+    border: 1px solid rgba(5,150,105,0.2);
+    color: #059669;
+  }
+
+  @media (max-width: 900px) {
+    .skills-section { padding: 2rem 1.5rem; }
+    .skills-groups { grid-template-columns: 1fr; }
+  }
+
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -698,6 +785,63 @@
 
 <div class="divider"></div>
 
+<!-- SKILLS -->
+<div class="skills-section">
+  <div class="skills-inner">
+    <p class="skills-tagline">
+      <strong>Procurement domain expertise meets production data science</strong> — not theoretical, built and deployed in regulated environments.
+    </p>
+    <div class="skills-groups">
+
+      <div class="skill-group">
+        <div class="skill-group-title">⚡ Procurement</div>
+        <div class="skill-pills">
+          <span class="skill-pill procurement">Strategic Sourcing</span>
+          <span class="skill-pill procurement">Category Management</span>
+          <span class="skill-pill procurement">Supplier Negotiation</span>
+          <span class="skill-pill procurement">Contract Management</span>
+          <span class="skill-pill procurement">Spend Analytics</span>
+          <span class="skill-pill procurement">Post-Merger Integration</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">🧠 Data Science & AI</div>
+        <div class="skill-pills">
+          <span class="skill-pill ai">Python</span>
+          <span class="skill-pill ai">R</span>
+          <span class="skill-pill ai">SQL</span>
+          <span class="skill-pill ai">DuckDB</span>
+          <span class="skill-pill ai">NLP</span>
+          <span class="skill-pill ai">TF-IDF</span>
+          <span class="skill-pill ai">UMAP</span>
+          <span class="skill-pill ai">HDBSCAN</span>
+          <span class="skill-pill ai">RAG Pipelines</span>
+          <span class="skill-pill ai">Vector Databases</span>
+          <span class="skill-pill ai">LLMs</span>
+          <span class="skill-pill ai">Shiny</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">☁️ Cloud & Infrastructure</div>
+        <div class="skill-pills">
+          <span class="skill-pill cloud">Docker</span>
+          <span class="skill-pill cloud">Cloud Deployment</span>
+          <span class="skill-pill cloud">AWS</span>
+          <span class="skill-pill cloud">Azure</span>
+          <span class="skill-pill cloud">DigitalOcean</span>
+          <span class="skill-pill cloud">GitHub</span>
+          <span class="skill-pill cloud">Linux</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 <!-- ABOUT -->
 <div class="section-wrap" id="about">
   <div class="section-header reveal">
@@ -958,7 +1102,7 @@
 <footer>
   <span>© 2026 Monish Pahwa</span>
   <span class="hi">Procurement × AI</span>
-  <span>Basel, Switzerland</span>
+  <span>Zürich, Switzerland</span>
 </footer>
 
 <script>
